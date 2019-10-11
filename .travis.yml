@@ -1,33 +1,28 @@
 language: c
 
-matrix:
-    os: linux
-      env:
-        - TEST="CppCheck"
-        - TARGET_CPU=amd64 BUILD_CONFIGURATION=Debug
-        - TARGET_CPU=amd64 BUILD_CONFIGURATION=Release
-        - TARGET_CPU=x86 BUILD_CONFIGURATION=Debug
-        - TARGET_CPU=x86 BUILD_CONFIGURATION=Release
-      dist: trusty
-      sudo: true
-      compiler:
-        - gcc
-        - clang
-      addons:
-       apt:
-         sources:
-           - ubuntu-toolchain-r-test
-         packages:
-           - gcc-4.8
-           - g++-4.8
-           - clang-3.7
-           - valgrind
-           - cppcheck
-        script:
-             - cmake -DENABLE_CPPCHECK=ON -DCMAKE_CXX_COMPILER="g++-6" ..
-             - make
-             - make check
+os: linux
 
+env:
+      - TEST="CppCheck"
+      - TARGET_CPU=amd64 BUILD_CONFIGURATION=Debug
+      - TARGET_CPU=amd64 BUILD_CONFIGURATION=Release
+      - TARGET_CPU=x86 BUILD_CONFIGURATION=Debug
+      - TARGET_CPU=x86 BUILD_CONFIGURATION=Release
+dist: trusty
+sudo: true
+compiler:
+      - gcc
+      - clang
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - gcc-4.8
+      - g++-4.8
+      - clang-3.7
+      - valgrind
+      - cppcheck
 before install:
   - sudo apt update
   - sudo apt install valgrind
@@ -59,5 +54,8 @@ script:
     ############################################################################
     # Build main and tests
     ############################################################################
+     - cmake -DENABLE_CPPCHECK=ON -DCMAKE_CXX_COMPILER="g++-6" ..
+     - make
+     - make check
      - cmake
      - make
