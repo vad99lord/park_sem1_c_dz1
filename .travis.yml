@@ -7,7 +7,7 @@ env:
       - TARGET_CPU=amd64 BUILD_CONFIGURATION=Release
       - TARGET_CPU=x86 BUILD_CONFIGURATION=Debug
       - TARGET_CPU=x86 BUILD_CONFIGURATION=Release
-dist: trusty
+dist: xenial
 sudo: true
 compiler:
       - gcc
@@ -63,4 +63,4 @@ script:
      - cppcheck --check-config --error-exitcode=1 --enable=warning,performance,information,style *c *.cpp *.h
      - ls
      - make testStack
-     - valgrind --leak-check=full -q ./run_tests.exe
+     - valgrind --leak-check=full -q ./Googletests/testArea
