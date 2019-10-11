@@ -31,7 +31,7 @@ install:
   - sudo apt install libgtest-dev
   - cd /usr/src/gtest
   - dir
-  - sudo cmake CMakeLists.txt
+  - sudo cmake CMakeLists.txt || (cat CMakeFiles/CMakeError.log && CMakeFiles/CMakeOutput.log)
   - sudo make
 script:
     ############################################################################
@@ -40,7 +40,7 @@ script:
      - cmake --version
      - dir
      - ls
-     - cmake CMakeLists.txt || (cat CMakeFiles/CMakeError.log && CMakeFiles/CMakeOutput.log)
+     - sudo cmake CMakeLists.txt
      - cppcheck --check-config --error-exitcode=1 --enable=warning,performance,information,style *c *.cpp *.h
      - ls
      - make testStack
