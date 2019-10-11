@@ -32,7 +32,7 @@ install:
   - cd /usr/src/gtest
   - dir
   - sudo cmake CMakeLists.txt
-  - - sudo make
+  - sudo make
 script:
     ############################################################################
     # Build main and tests
@@ -40,8 +40,8 @@ script:
      - cmake --version
      - dir
      - ls
-     - cmake CMakeLists.txt
-     - cppcheck --check-config --error-exitcode=1 --enable=warning,performance,information,style *.cpp *.h
+     - cmake CMakeLists.txt || (cat CMakeFiles/CMakeError.log && CMakeFiles/CMakeOutput.log)
+     - cppcheck --check-config --error-exitcode=1 --enable=warning,performance,information,style *c *.cpp *.h
      - ls
      - make testStack
      - valgrind --leak-check=full -q ./run_tests.exe
