@@ -24,16 +24,24 @@ addons:
       - cppcheck
 before install:
   - sudo apt update
+install:
+  - sudo apt install cppcheck
   - sudo apt install valgrind
   - sudo apt install cmake
-  - sudo apt install cppcheck
+  - sudo apt install libgtest-dev
+  - cd /usr/src/gtest
+  - dir
+  - sudo cmake CMakeLists.txt
+  - - sudo make
 script:
     ############################################################################
     # Build main and tests
     ############################################################################
+     - cmake --version
      - dir
      - ls
      - cmake CMakeLists.txt
      - cppcheck --check-config --error-exitcode=1 --enable=warning,performance,information,style *.cpp *.h
      - ls
      - make testStack
+     - valgrind --leak-check=full -q ./run_tests.exe
