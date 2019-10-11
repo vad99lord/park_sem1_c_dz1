@@ -22,12 +22,19 @@ addons:
       - clang-3.7
       - valgrind
       - cppcheck
+      - cmake
+matrix:
+  include:
+    - env: CXX=g++ CC=gcc
+      # additional apt settings if needed
+    - env: CXX=clang++ CC=clang
 before install:
   - sudo apt update
 install:
   - sudo apt install cppcheck
   - sudo apt install valgrind
   - sudo apt install cmake
+  - sudo apt update
   - if [ "$CXX" = "g++" ]; then export CXX="g++-6" CC="gcc-6"; fi
   - sudo apt install libgtest-dev
   - cd /usr/src/gtest
