@@ -28,11 +28,14 @@ install:
   - sudo apt install cppcheck
   - sudo apt install valgrind
   - sudo apt install cmake
+  - if [ "$CXX" = "g++" ]; then export CXX="g++-6" CC="gcc-6"; fi
   - sudo apt install libgtest-dev
   - cd /usr/src/gtest
   - dir
   - sudo cmake CMakeLists.txt || (cat CMakeFiles/CMakeError.log && CMakeFiles/CMakeOutput.log)
   - sudo make
+  - sudo mv libgtest* /usr/lib/
+  - cd "${TRAVIS_BUILD_DIR}"
 script:
     ############################################################################
     # Build main and tests
