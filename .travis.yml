@@ -17,20 +17,10 @@ addons:
     packages:
       - valgrind
       - cppcheck
-      - cmake
-matrix:
-  include:
-    - compiler: gcc
-      env:
-        - MATRIX_EVAL="CC=gcc && CXX=g++"
-
-    - compiler: clang
-      env:
-        - MATRIX_EVAL="CC=clang && CXX=clang++"
+compiler:
+  - gcc
+  - clang
 before install:
-  - echo $PATH
-  - eval "${MATRIX_EVAL}"
-  - if [ "$CXX" == "clang" ]; then export CC="clang-5.0";
   - sudo apt update
 install:
   ############################################################################
@@ -58,5 +48,5 @@ script:
   - sudo cmake -DCMAKE_VERBOSE_MAKEFILE=ON CMakeLists.txt
   - cppcheck --check-config --error-exitcode=1 --enable=warning,performance,information,style *c *.cpp *.h
   - ls
-  - make
+  - make testStack
   - valgrind --leak-check=full -q ./Googletests/testArea
