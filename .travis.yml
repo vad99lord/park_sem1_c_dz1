@@ -28,7 +28,9 @@ matrix:
       env:
         - MATRIX_EVAL="CC=clang && CXX=clang++"
 before install:
+  - echo $PATH
   - eval "${MATRIX_EVAL}"
+  - if [ "$CXX" == "clang" ]; then export CC="clang-5.0";
   - sudo apt update
 install:
   ############################################################################

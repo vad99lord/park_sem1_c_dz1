@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.6)
+cmake_minimum_required(VERSION 2.8.8)
 project(park_sem1_c_dz1 C)
 
 set(CMAKE_C_STANDARD 11)
