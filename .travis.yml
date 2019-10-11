@@ -18,8 +18,8 @@ addons:
       - valgrind
       - cppcheck
       - cmake
-      - gcc-5.0
-      - clang-7.0
+      - gcc
+      - clang
 compiler:
   - gcc
   - clang
