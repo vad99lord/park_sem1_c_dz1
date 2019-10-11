@@ -9,9 +9,7 @@ env:
   - TARGET_CPU=x86 BUILD_CONFIGURATION=Release
 dist: xenial
 sudo: true
-compiler:
-  - gcc
-  - clang
+
 addons:
   apt:
     sources:
@@ -20,13 +18,25 @@ addons:
       - valgrind
       - cppcheck
       - cmake
+matrix:
+  include:
+    - compiler: gcc
+      env:
+        - MATRIX_EVAL="CC=gcc && CXX=g++"
+
+    - compiler: clang
+      env:
+        - MATRIX_EVAL="CC=clang && CXX=clang++"
 before install:
+  - eval "${MATRIX_EVAL}"
   - sudo apt update
 install:
   ############################################################################
   # Install a recent CMake
   ############################################################################
   - cmake --version
+  - gcc --version
+  - clang --version
   - sudo apt install cppcheck
   - sudo apt install valgrind
   - sudo apt install libgtest-dev
@@ -36,9 +46,6 @@ install:
   - sudo make
   - sudo mv libgtest* /usr/lib/
   - cd "${TRAVIS_BUILD_DIR}"
-  - repository 'deb https://apt.kitware.com/ubuntu/ xenial main'
-  - sudo apt-get update
-  - sudo apt-get install cmake
 script:
   ############################################################################
   # Build main and tests
