@@ -62,5 +62,5 @@ script:
      - sudo cmake CMakeLists.txt
      - cppcheck --check-config --error-exitcode=1 --enable=warning,performance,information,style *c *.cpp *.h
      - ls
-     - make testStack
+     - make
      - valgrind --leak-check=full -q ./Googletests/testArea
