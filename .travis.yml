@@ -34,7 +34,7 @@ install:
   - sudo apt install libgtest-dev
   - cd /usr/src/gtest
   - dir
-  - cmake CMakeLists.txt || (cat CMakeFiles/CMakeError.log && CMakeFiles/CMakeOutput.log)
+  - sudo cmake CMakeLists.txt || (cat CMakeFiles/CMakeError.log && CMakeFiles/CMakeOutput.log)
   - make
   - sudo mv libgtest* /usr/lib/
   - cd "${TRAVIS_BUILD_DIR}"
@@ -49,4 +49,4 @@ script:
   - cppcheck --check-config --error-exitcode=1 --enable=warning,performance,information,style *c *.cpp *.h
   - ls
   - make testStack
-  - valgrind --leak-check=full -q ./Googletests/testArea
+  - valgrind --leak-check=full -q ./Google-tests/testArea
