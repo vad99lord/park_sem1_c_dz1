@@ -34,7 +34,7 @@ script:
     ############################################################################
      - dir
      - ls
+     - cmake CMakeLists.txt
      - cppcheck --check-config --error-exitcode=1 --enable=warning,performance,information,style *.cpp *.h
-     - cmake -DENABLE_CPPCHECK=ON -DCMAKE_CXX_COMPILER="g++-6" CMakeLists.txt
      - ls
      - make testStack
