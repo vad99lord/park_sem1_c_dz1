@@ -3,15 +3,15 @@ language: c
 os: linux
 
 env:
-      - TARGET_CPU=amd64 BUILD_CONFIGURATION=Debug
-      - TARGET_CPU=amd64 BUILD_CONFIGURATION=Release
-      - TARGET_CPU=x86 BUILD_CONFIGURATION=Debug
-      - TARGET_CPU=x86 BUILD_CONFIGURATION=Release
-dist: xenial
+  - TARGET_CPU=amd64 BUILD_CONFIGURATION=Debug
+  - TARGET_CPU=amd64 BUILD_CONFIGURATION=Release
+  - TARGET_CPU=x86 BUILD_CONFIGURATION=Debug
+  - TARGET_CPU=x86 BUILD_CONFIGURATION=Release
+dist: trusty
 sudo: true
 compiler:
-      - gcc
-      - clang
+  - gcc
+  - clang
 addons:
   apt:
     sources:
@@ -34,14 +34,14 @@ install:
   ############################################################################
   # Install a recent CMake
   ############################################################################
-    - |
-      if [[ "${TRAVIS_OS_NAME}" == "linux" ]]; then
-        CMAKE_URL="https://cmake.org/files/v3.10/cmake-3.10.0-Linux-x86_64.tar.gz"
-        mkdir cmake && travis_retry wget --no-check-certificate --quiet -O - ${CMAKE_URL} | tar --strip-components=1 -xz -C cmake
-        export PATH=${DEPS_DIR}/cmake/bin:${PATH}
-      else
-        brew install cmake || brew upgrade cmake
-      fi
+  - |
+    if [[ "${TRAVIS_OS_NAME}" == "linux" ]]; then
+      CMAKE_URL="https://cmake.org/files/v3.10/cmake-3.10.0-Linux-x86_64.tar.gz"
+      mkdir cmake && travis_retry wget --no-check-certificate --quiet -O - ${CMAKE_URL} | tar --strip-components=1 -xz -C cmake
+      export PATH=${DEPS_DIR}/cmake/bin:${PATH}
+    else
+      brew install cmake || brew upgrade cmake
+    fi
   - cmake --version
   - sudo apt install cppcheck
   - sudo apt install valgrind
@@ -53,14 +53,14 @@ install:
   - sudo mv libgtest* /usr/lib/
   - cd "${TRAVIS_BUILD_DIR}"
 script:
-    ############################################################################
-    # Build main and tests
-    ############################################################################
-     - cmake --version
-     - dir
-     - ls
-     - sudo cmake CMakeLists.txt
-     - cppcheck --check-config --error-exitcode=1 --enable=warning,performance,information,style *c *.cpp *.h
-     - ls
-     - make
-     - valgrind --leak-check=full -q ./Googletests/testArea
+  ############################################################################
+  # Build main and tests
+  ############################################################################
+  - cmake --version
+  - dir
+  - ls
+  - sudo cmake CMakeLists.txt
+  - cppcheck --check-config --error-exitcode=1 --enable=warning,performance,information,style *c *.cpp *.h
+  - ls
+  - make
+  - valgrind --leak-check=full -q ./Googletests/testArea
