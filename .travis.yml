@@ -27,12 +27,11 @@ before install:
   - sudo apt update
   - sudo apt install valgrind
   - sudo apt install cmake
+  - sudo apt install cppcheck
 install:
     - if [ "$CXX" = "clang++" ] && [ "$TRAVIS_OS_NAME" = "linux" ]; then export CXX="clang++-3.7" CC="clang-3.7"; fi
     - echo ${PATH}
     - echo ${CXX}
-    - ${CXX} --version
-    - ${CXX} -v
 
       #
       # Update / Install CMake
@@ -54,6 +53,7 @@ script:
     ############################################################################
     # Build main and tests
     ############################################################################
+     - dir
      - cmake -DENABLE_CPPCHECK=ON -DCMAKE_CXX_COMPILER="g++-6" ..
      - make
      - make check
