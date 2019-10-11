@@ -41,7 +41,7 @@ install:
   - sudo apt install libgtest-dev
   - cd /usr/src/gtest
   - dir
-  - sudo cmake CMakeLists.txt || (cat CMakeFiles/CMakeError.log && CMakeFiles/CMakeOutput.log)
+  - sudo cmake CMakeLists.txt
   - sudo make
   - sudo mv libgtest* /usr/lib/
   - cd "${TRAVIS_BUILD_DIR}"
