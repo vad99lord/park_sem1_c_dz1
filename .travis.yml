@@ -26,9 +26,6 @@ install:
   ############################################################################
   # Install a recent CMake
   ############################################################################
-  - CMAKE_URL="https://cmake.org/files/v3.10/cmake-3.10.0-Linux-x86_64.tar.gz"
-  - mkdir cmake && travis_retry wget --no-check-certificate --quiet -O - ${CMAKE_URL} | tar --strip-components=1 -xz -C cmake
-  - export PATH=${DEPS_DIR}/cmake/bin:${PATH}
   - cmake --version
   - sudo apt install cppcheck
   - sudo apt install valgrind
@@ -39,10 +36,9 @@ install:
   - sudo make
   - sudo mv libgtest* /usr/lib/
   - cd "${TRAVIS_BUILD_DIR}"
-  - sudo apt-add-
   - repository 'deb https://apt.kitware.com/ubuntu/ xenial main'
-    - sudo apt-get update
-   - sudo apt-get install cmake
+  - sudo apt-get update
+  - sudo apt-get install cmake
 script:
   ############################################################################
   # Build main and tests
