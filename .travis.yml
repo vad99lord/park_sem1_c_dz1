@@ -17,11 +17,18 @@ addons:
     packages:
       - valgrind
       - cppcheck
+      - cmake
+      - gcc-5.0
+      - clang-7.0
 compiler:
   - gcc
   - clang
 before install:
   - sudo apt update
+  - sudo -i  which clang
+  - sudo -i clang --version
+  - sudo -i which cmake
+  - sudo -i cmake --version
 install:
   ############################################################################
   # Install a recent CMake
