@@ -56,5 +56,6 @@ script:
   - cppcheck --check-config --error-exitcode=1 --enable=warning,performance,information,style --suppress=missingIncludeSystem *c *.cpp *.h
   - ls
   - sudo make testStack
+  - sudo make Google_tests_run
   - dir
-  - valgrind --leak-check=full -q ./Google_tests/testArea
+  #- valgrind --leak-check=full -q ./Google_tests/testArea
