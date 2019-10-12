@@ -30,7 +30,7 @@ add_executable(testMerge testMerge.c MergeSort.c MergeSort.h random_utils.c)
 #add_subdirectory(Google_tests)
 enable_testing()
 set(SOURCE_FILES
-        ${CMAKE_CURRENT_SOURCE_DIR}/Google_tests/testMerge.cpp
+        testMerge.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/Google_tests/testStack.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/Google_tests/testHull.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/Google_tests/testArea.cpp
