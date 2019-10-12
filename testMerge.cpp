@@ -1,9 +1,9 @@
 #include <gtest/gtest.h>
 
 extern "C" {
-#include "../MergeSort.h"
-#include "../random_utils.h"
-#include "../Point.h"
+#include "MergeSort.h"
+#include "random_utils.h"
+#include "Point.h"
 }
 
 //sample compare function for ints
