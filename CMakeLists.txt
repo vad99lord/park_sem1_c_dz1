@@ -36,4 +36,4 @@ set(SOURCE_FILES
         testArea.cpp
         MergeSort.c random_utils.c convex_hull.c Stack.c max_area.c)
 add_executable(Google_tests_run main.cpp ${SOURCE_FILES})
-target_link_libraries(Google_tests_run  ${GTEST_BOTH_LIBRARIES}  pthread )
+target_link_libraries(Google_tests_run  ${GTEST_BOTH_LIBRARIES} gtest pthread )
