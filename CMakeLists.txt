@@ -31,7 +31,7 @@ add_executable(testMerge testMerge.c MergeSort.c MergeSort.h random_utils.c)
 enable_testing()
 set(SOURCE_FILES
         MergeSort.c random_utils.c convex_hull.c Stack.c max_area.c
-        Merge.cpp
+        testMerge.cpp
         testStack.cpp
         testHull.cpp
         testArea.cpp)
