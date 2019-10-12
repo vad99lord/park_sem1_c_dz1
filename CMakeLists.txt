@@ -35,5 +35,5 @@ set(SOURCE_FILES
         ${CMAKE_CURRENT_SOURCE_DIR}/Google_tests/testHull.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/Google_tests/testArea.cpp
         MergeSort.c random_utils.c convex_hull.c Stack.c max_area.c)
-add_executable(Google_tests_run ${SOURCE_FILES})
-target_link_libraries(Google_tests_run  ${GTEST_BOTH_LIBRARIES} gtest gtest_main pthread )
+add_executable(Google_tests_run main.cpp ${SOURCE_FILES})
+target_link_libraries(Google_tests_run  ${GTEST_BOTH_LIBRARIES} gtest  pthread )
