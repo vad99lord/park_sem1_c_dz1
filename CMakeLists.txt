@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 2.8.8)
 project(park_sem1_c_dz1 C)
 
 set(CMAKE_C_STANDARD 11)
+set(CMAKE_C_COMPILER g++)
 
 set (CPPCHECK_EXCLUDE_DIRS Google_tests/lib/)
 
