@@ -67,7 +67,7 @@ TEST(AreaTests, AreaValidity) {
     for (int i =1;i<numOfSizes;i++){
         size[i]=size[i-1]*5;
     }
-    int numOfIters = 5;
+    int numOfIters = 3;
 
     int maxRand = 100;
 

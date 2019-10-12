@@ -54,4 +54,5 @@ TEST(StackTests, PointTest) {
     popped = *(Point *) peek(stack);
     ASSERT_EQ(*popped.x, 2);
     delete_stack(stack);
+    delete[] values;
 }

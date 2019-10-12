@@ -8,14 +8,14 @@
 TEST(HullTests, ConvexValidity) {
     //size array list
     //testing from 10 to 1000000
-    int numOfSizes = 5;
+    int numOfSizes = 4;
     int size[numOfSizes];
     srand(time(nullptr) );
     size[0]=10;
     for (int i =1;i<numOfSizes;i++){
         size[i]=size[i-1]*10;
     }
-    int numOfIters = 5;
+    int numOfIters = 3;
 
     int maxRand = 1000;
 

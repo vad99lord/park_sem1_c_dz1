@@ -27,7 +27,7 @@ TEST(MergeTests, SortValidity) {
     for (int i = 1; i < numOfSizes; i++) {
         size[i] = size[i - 1] * 10;
     }
-    int numOfIters = 10;
+    int numOfIters = 5;
 
     int maxRand = 1000;
     for (int i = 0; i < numOfSizes; i++) {
