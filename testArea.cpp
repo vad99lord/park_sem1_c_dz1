@@ -65,9 +65,9 @@ TEST(AreaTests, AreaValidity) {
     for (int i =1;i<numOfSizes;i++){
         size[i]=size[i-1]*5;
     }
-    int numOfIters = 3;
+    int numOfIters = 4;
 
-    int maxRand = 100;
+    int maxRand = 1000;
 
     int **pointsPos = (int**)malloc(3 * sizeof(int *));
     int *vertices = (int*)malloc(3 * sizeof(int));
