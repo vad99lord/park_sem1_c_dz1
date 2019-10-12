@@ -55,5 +55,5 @@ script:
   - sudo cmake -DCMAKE_VERBOSE_MAKEFILE=ON CMakeLists.txt
   - cppcheck --check-config --error-exitcode=1 --enable=warning,performance,information,style *c *.cpp *.h
   - ls
-  - make testStack
-  - valgrind --leak-check=full -q ./Google-tests/testArea
+  - sudo make testStack
+  - valgrind --leak-check=full -q ./Google_tests/testArea
