@@ -1,9 +1,7 @@
 #include <gtest/gtest.h>
-//extern "C" {
 #include "convex_hull.h"
 #include "random_utils.h"
 #include "Point.h"
-//}
 
 TEST(HullTests, ConvexValidity) {
     //size array list

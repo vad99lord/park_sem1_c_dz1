@@ -1,10 +1,9 @@
 #include <gtest/gtest.h>
 
-//extern "C" {
 #include "MergeSort.h"
 #include "random_utils.h"
 #include "Point.h"
-//}
+
 
 //sample compare function for ints
 int compare_ints(const void *p, const void *q) {

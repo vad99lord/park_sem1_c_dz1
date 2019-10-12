@@ -1,10 +1,9 @@
 #include <gtest/gtest.h>
 
-//extern "C" {
 #include "max_area.h"
 #include "Stack.h"
 #include "Point.h"
-//}
+
 
 
 TEST(StackTests, IntegerTest) {

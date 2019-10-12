@@ -57,6 +57,7 @@ script:
   - ls
   - sudo make testStack
   - sudo make Google_tests_run
+  - sudo make park_sem1_c_dz1
   - dir
   - valgrind --leak-check=full -q ./Google_tests_run
   - valgrind --leak-check=full -q ./testStack

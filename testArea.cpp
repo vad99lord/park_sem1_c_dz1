@@ -1,10 +1,8 @@
 #include <gtest/gtest.h>
-//extern "C" {
 #include "max_area.h"
 #include "random_utils.h"
 #include "Point.h"
 #include "MergeSort.h"
-//}
 
 //sample compare function for ints
 int compare_by_ints(const void *p, const void *q)
