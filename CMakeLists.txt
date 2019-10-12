@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.8.8)
 
 set(CMAKE_C_STANDARD 11)
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_C_COMPILER g++)
 set(CMAKE_CXX_COMPILER g++)
 set(CMAKE_C_FLAGS "-fpermissive")
@@ -30,7 +30,7 @@ add_executable(testMerge testMerge.c MergeSort.c MergeSort.h random_utils.c)
 #add_subdirectory(Google_tests)
 enable_testing()
 set(SOURCE_FILES
-        MergeSort.c random_utils.c convex_hull.c Stack.c max_area.ctest
+        MergeSort.c random_utils.c convex_hull.c Stack.c max_area.c
         Merge.cpp
         testStack.cpp
         testHull.cpp
