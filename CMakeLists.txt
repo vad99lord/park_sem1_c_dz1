@@ -3,6 +3,7 @@ project(park_sem1_c_dz1 C)
 
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_C_COMPILER g++)
+set(CMAKE_C_FLAGS "-fpermissive")
 
 set (CPPCHECK_EXCLUDE_DIRS Google_tests/lib/)
 
