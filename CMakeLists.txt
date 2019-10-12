@@ -25,7 +25,7 @@ add_executable(park_sem1_c_dz1 main.c Stack.c MergeSort.c random_utils.c convex_
 add_executable(testStack testStack.c Stack.c Stack.h)
 add_executable(testMerge testMerge.c MergeSort.c MergeSort.h random_utils.c)
 #add_subdirectory(Google_tests)
-
+enable_testing()
 set(SOURCE_FILES Google_tests/testMerge.cpp Google_tests/testStack.cpp Google_tests/testHull.cpp Google_tests/testArea.cpp MergeSort.c random_utils.c convex_hull.c Stack.c max_area.c)
 add_executable(Google_tests_run ${SOURCE_FILES})
-target_link_libraries(Google_tests_run ${GTEST_LIBRARIES} gtest gtest_main -pthread)
+target_link_libraries(Google_tests_run ${GTEST_BOTH_LIBRARIES} gtest gtest_main )
