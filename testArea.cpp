@@ -69,7 +69,6 @@ TEST(AreaTests, AreaValidity) {
 
     int maxRand = 100;
 
-
     int **pointsPos = (int**)malloc(3 * sizeof(int *));
     int *vertices = (int*)malloc(3 * sizeof(int));
 
