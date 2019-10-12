@@ -1,5 +1,4 @@
 cmake_minimum_required(VERSION 2.8.8)
-project(park_sem1_c_dz1 C)
 
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_C_COMPILER g++)
@@ -36,4 +35,4 @@ set(SOURCE_FILES
         ${CMAKE_CURRENT_SOURCE_DIR}/Google_tests/testArea.cpp
         MergeSort.c random_utils.c convex_hull.c Stack.c max_area.c)
 add_executable(Google_tests_run main.cpp ${SOURCE_FILES})
-target_link_libraries(Google_tests_run  ${GTEST_BOTH_LIBRARIES} gtest  pthread )
+target_link_libraries(Google_tests_run  ${GTEST_BOTH_LIBRARIES}  pthread )

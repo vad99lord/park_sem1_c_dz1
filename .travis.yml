@@ -60,3 +60,6 @@ script:
   - dir
   - valgrind --leak-check=full -q ./Google_tests_run
   - valgrind --leak-check=full -q ./testStack
+
+notifications:
+  email: false
