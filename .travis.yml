@@ -59,3 +59,4 @@ script:
   - sudo make Google_tests_run
   - dir
   - valgrind --leak-check=full -q ./Google_tests_run
+  - valgrind --leak-check=full -q ./testStack

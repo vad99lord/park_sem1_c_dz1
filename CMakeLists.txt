@@ -29,6 +29,11 @@ add_executable(testStack testStack.c Stack.c Stack.h)
 add_executable(testMerge testMerge.c MergeSort.c MergeSort.h random_utils.c)
 #add_subdirectory(Google_tests)
 enable_testing()
-set(SOURCE_FILES Google_tests/testMerge.cpp Google_tests/testStack.cpp Google_tests/testHull.cpp Google_tests/testArea.cpp MergeSort.c random_utils.c convex_hull.c Stack.c max_area.c)
+set(SOURCE_FILES
+        ${CMAKE_CURRENT_SOURCE_DIR}/Google_tests/testMerge.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/Google_tests/testStack.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/Google_tests/testHull.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/Google_tests/testArea.cpp
+        MergeSort.c random_utils.c convex_hull.c Stack.c max_area.c)
 add_executable(Google_tests_run ${SOURCE_FILES})
-target_link_libraries(Google_tests_run Google_tests/main.cpp ${GTEST_BOTH_LIBRARIES} gtest pthread )
+target_link_libraries(Google_tests_run Google_tests/main.cpp ${GTEST_BOTH_LIBRARIES} gtest gtest_main pthread )
