@@ -53,7 +53,8 @@ script:
   - dir
   - ls
   - sudo cmake -DCMAKE_VERBOSE_MAKEFILE=ON CMakeLists.txt
-  - cppcheck --check-config --error-exitcode=1 --enable=warning,performance,information,style *c *.cpp *.h
+  - cppcheck --check-config --error-exitcode=1 --enable=warning,performance,information,style --suppress=missingIncludeSystem *c *.cpp *.h
   - ls
   - sudo make testStack
+  - dir
   - valgrind --leak-check=full -q ./Google_tests/testArea

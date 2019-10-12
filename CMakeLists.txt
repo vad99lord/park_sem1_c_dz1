@@ -15,7 +15,16 @@ if (CMAKE_C_CPPCHECK)
     )
 endif()
 
+
+# Locate GTest
+find_package(GTest REQUIRED)
+INCLUDE_DIRECTORIES(${GTEST_INCLUDE_DIRS})
+
 add_executable(park_sem1_c_dz1 main.c Stack.c MergeSort.c random_utils.c convex_hull.c max_area.c)
 add_executable(testStack testStack.c Stack.c Stack.h)
 add_executable(testMerge testMerge.c MergeSort.c MergeSort.h random_utils.c)
 #add_subdirectory(Google_tests)
+
+set(SOURCE_FILES Google_tests/testMerge.cpp Google_tests/testStack.cpp Google_tests/testHull.cpp Google_tests/testArea.cpp MergeSort.c random_utils.c convex_hull.c Stack.c max_area.c)
+add_executable(Google_tests_run ${SOURCE_FILES})
+target_link_libraries(Google_tests_run ${GTEST_LIBRARIES})
