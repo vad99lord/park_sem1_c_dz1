@@ -6,8 +6,8 @@
 #define PARK_SEM1_C_DZ1_CONVEX_HULL_H
 
 #include <stdlib.h>
-#include "Stack.h"
-#include "Point.h"
+#include "stack.h"
+#include "point.h"
 
 //Function to compute convex hull of a set of points
 //Based on Graham-Scan convex hull algorithm.

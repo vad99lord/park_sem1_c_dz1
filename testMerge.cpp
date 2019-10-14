@@ -1,8 +1,8 @@
 #include <gtest/gtest.h>
 
-#include "MergeSort.h"
+#include "merge_sort.h"
 #include "random_utils.h"
-#include "Point.h"
+#include "point.h"
 
 
 //sample compare function for ints

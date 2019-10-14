@@ -3,7 +3,7 @@
 #include <assert.h>
 #include <string.h>
 #include <stdio.h>
-#include "Stack.h"
+#include "stack.h"
 
 struct Stack {
     void *array; //container for elements

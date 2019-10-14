@@ -2,8 +2,8 @@
 // Created by vadim on 09.10.2019.
 //
 
-#ifndef PARK_SEM1_C_DZ1_MERGESORT_H
-#define PARK_SEM1_C_DZ1_MERGESORT_H
+#ifndef PARK_SEM1_C_DZ1_MERGE_SORT_H
+#define PARK_SEM1_C_DZ1_MERGE_SORT_H
 
 #include <stdbool.h>
 
@@ -24,4 +24,4 @@ bool isSorted(const void *a, size_t lo, size_t hi, size_t size,
               int (*comp)(const void *, const void *));
 
 
-#endif //PARK_SEM1_C_DZ1_MERGESORT_H
+#endif //PARK_SEM1_C_DZ1_MERGE_SORT_H

@@ -1,7 +1,7 @@
 #include "convex_hull.h"
 #include <assert.h>
 #include <stdlib.h>
-#include "MergeSort.h"
+#include "merge_sort.h"
 
 //pivot point(with lowest y-coordinate for convex hull algorithm)
 static Point pivot;

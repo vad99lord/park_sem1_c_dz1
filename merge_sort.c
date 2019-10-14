@@ -2,7 +2,7 @@
 #include <string.h>
 #include <stdbool.h>
 #include <stdlib.h>
-#include "MergeSort.h"
+#include "merge_sort.h"
 
 bool isSorted(const void *a, size_t lo, size_t hi, size_t size,
               int (*comp)(const void *, const void *)) {

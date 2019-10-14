@@ -24,13 +24,13 @@ find_package(GTest REQUIRED)
 find_package(Threads)
 INCLUDE_DIRECTORIES(${GTEST_INCLUDE_DIRS})
 
-add_executable(park_sem1_c_dz1 main.c Stack.c MergeSort.c random_utils.c convex_hull.c max_area.c)
-add_executable(testStack testStack.c Stack.c Stack.h)
-add_executable(testMerge testMerge.c MergeSort.c MergeSort.h random_utils.c)
+add_executable(park_sem1_c_dz1 main.c stack.c merge_sort.c random_utils.c convex_hull.c max_area.c)
+add_executable(testStack testStack.c stack.c stack.h)
+add_executable(testMerge testMerge.c merge_sort.c merge_sort.h random_utils.c)
 #add_subdirectory(Google_tests)
 enable_testing()
 set(SOURCE_FILES
-        MergeSort.c random_utils.c convex_hull.c Stack.c max_area.c
+        merge_sort.c random_utils.c convex_hull.c stack.c max_area.c
         testMerge.cpp
         testStack.cpp
         testHull.cpp

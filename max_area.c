@@ -1,9 +1,9 @@
 #include <math.h>
 #include <assert.h>
 #include "max_area.h"
-#include "Point.h"
+#include "point.h"
 #include "convex_hull.h"
-#include "Stack.h"
+#include "stack.h"
 
 double calc_triangle_area(Point a, Point b, Point c) {
     double area = (*a.x - *c.x) * (*b.y - *a.y) - (*a.x - *b.x) * (*c.y - *a.y);

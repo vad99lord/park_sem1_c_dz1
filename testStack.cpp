@@ -1,8 +1,8 @@
 #include <gtest/gtest.h>
 
 #include "max_area.h"
-#include "Stack.h"
-#include "Point.h"
+#include "stack.h"
+#include "point.h"
 
 
 

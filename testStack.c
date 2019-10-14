@@ -1,7 +1,7 @@
-#include "Stack.h"
+#include "stack.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include "Point.h"
+#include "point.h"
 
 // Driver program to test Stack functions
 int main() {

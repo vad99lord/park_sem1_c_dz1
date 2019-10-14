@@ -6,7 +6,7 @@
 #define PARK_SEM1_C_DZ1_MAX_AREA_H
 
 #include <stdio.h>
-#include "Point.h"
+#include "point.h"
 
 
 static const size_t vertex = 3;
