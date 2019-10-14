@@ -5,7 +5,7 @@
 #ifndef PARK_SEM1_C_DZ1_CONVEX_HULL_H
 #define PARK_SEM1_C_DZ1_CONVEX_HULL_H
 
-#include <stdio.h>
+#include <stdlib.h>
 #include "Stack.h"
 #include "Point.h"
 

@@ -6,9 +6,6 @@
 #define PARK_SEM1_C_DZ1_MAX_AREA_H
 
 #include <stdio.h>
-#include <stdbool.h>
-#include <math.h>
-#include <assert.h>
 #include "Point.h"
 
 

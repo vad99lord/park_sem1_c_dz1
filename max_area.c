@@ -1,3 +1,5 @@
+#include <math.h>
+#include <assert.h>
 #include "max_area.h"
 #include "Point.h"
 #include "convex_hull.h"

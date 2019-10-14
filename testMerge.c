@@ -1,6 +1,7 @@
-#include "MergeSort.h"
 #include <stdio.h>
 #include <time.h>
+#include <stdlib.h>
+#include "MergeSort.h"
 #include "random_utils.h"
 
 

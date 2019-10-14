@@ -5,7 +5,6 @@
 #ifndef PARK_SEM1_C_DZ1_STACK_H
 #define PARK_SEM1_C_DZ1_STACK_H
 
-#include "main.h"
 #include <stdlib.h>
 #include <stdbool.h>
 

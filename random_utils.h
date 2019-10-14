@@ -2,7 +2,6 @@
 #define PARK_SEM1_C_DZ1_RANDOM_UTILS_H
 
 
-#include <stdlib.h>
 
 // Assumes 0 <= max <= RAND_MAX
 // Returns in the closed interval [0, max]

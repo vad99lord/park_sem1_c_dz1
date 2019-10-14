@@ -1,6 +1,7 @@
 #include <assert.h>
 #include <string.h>
 #include <stdbool.h>
+#include <stdlib.h>
 #include "MergeSort.h"
 
 bool isSorted(const void *a, size_t lo, size_t hi, size_t size,

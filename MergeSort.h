@@ -5,7 +5,6 @@
 #ifndef PARK_SEM1_C_DZ1_MERGESORT_H
 #define PARK_SEM1_C_DZ1_MERGESORT_H
 
-#include <stdlib.h>
 #include <stdbool.h>
 
 /**

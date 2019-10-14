@@ -1,5 +1,5 @@
 #include <time.h>
-#include "main.h"
+#include <stdlib.h>
 #include "max_area.h"
 #include "random_utils.h"
 

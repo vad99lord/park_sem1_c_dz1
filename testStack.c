@@ -1,5 +1,6 @@
 #include "Stack.h"
 #include <stdio.h>
+#include <stdlib.h>
 #include "Point.h"
 
 // Driver program to test Stack functions
