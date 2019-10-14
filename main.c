@@ -64,22 +64,17 @@ int main() {
 
 
     //simple print loop
-    printf("номера точек треугольника:\n");
-    for (size_t i = 0; i < vertex; i++) {
-        printf("%d\n", *pointsPos[i]);
-    }
-
-    printf("кординаты треугольника:\n");
-    for (size_t i = 0; i < vertex; i++) {
-        printf("(%d ,", *xCoords[*pointsPos[i]]);
-        printf("%d)\n", *yCoords[*pointsPos[i]]);
-    }
-    printf("площадь треугольника:\n");
     Point points[3];
     for (size_t i = 0; i < vertex; i++) {
+        printf("точка номер: ");
+        printf("%d", *pointsPos[i]);
+        printf(", координаты : ");
+        printf("(%d ,", *xCoords[*pointsPos[i]]);
+        printf("%d)\n", *yCoords[*pointsPos[i]]);
         points[i].x = xCoords[*pointsPos[i]];
         points[i].y = yCoords[*pointsPos[i]];
     }
+    printf("площадь треугольника:\n");
     printf("%f\n", calc_triangle_area(points[0], points[1], points[2]));
 
 

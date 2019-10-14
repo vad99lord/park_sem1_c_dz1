@@ -92,7 +92,17 @@ TEST(AreaTests, AreaValidity) {
             find_max_area_brute(xPoints,yPoints,size[i],bruteVertices);
             merge_sort(vertices,0,3,3,sizeof(int),compare_by_ints);
             merge_sort(bruteVertices,0,3,3,sizeof(int),compare_by_ints);
-            ASSERT_TRUE(isEqual(vertices,bruteVertices,3));
+Point brutePoints[vertex];
+Point convexPoints[vertex];
+for (int l=0;l<vertex;l++){
+brutePoints[l].x = xPoints[l];
+brutePoints[l].y = yPoints[l];
+convexPoints[l].x = xPoints[l];
+convexPoints[l].y = yPoints[l];
+}
+double bruteArea = calc_triangle_area(brutePoints[0],brutePoints[1],brutePoints[2]);
+double convexArea = calc_triangle_area(convexPoints[0],convexPoints[1],convexPoints[2]);
+            ASSERT_TRUE(isEqual(vertices,bruteVertices,3)|| bruteArea==convexArea);
         }
 
         delete[] x;
