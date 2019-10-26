@@ -19,11 +19,11 @@ ADD_LIBRARY(SeqCounterMultiLib SHARED SequenceCounterMulti.c)
 
 #add_executable(park_sem1_c_dz2 BinarySearchST.c FileUtils.c)
 add_executable(SeqGen SeqGenFiles.c SequenceGen.c RandomUtils.c FileUtils.c)
-add_executable(SeqCounterSingle SequenceCounterMain.c  )
-add_executable(SeqCounterMulti  SequenceCounterMain.c)
+add_executable(SeqCounterSingle SequenceCounterMain.c  SeqCounterSingleLib)
+add_executable(SeqCounterMulti  SequenceCounterMain.c SeqCounterMultiLib)
 
 TARGET_LINK_LIBRARIES(SeqCounterSingle SeqCounterSingleLib)
-TARGET_LINK_LIBRARIES(SeqCounterMulti pthread  SeqCounterMultiLib)
+TARGET_LINK_LIBRARIES(SeqCounterMulti SeqCounterMultiLib pthread )
 
 
 
