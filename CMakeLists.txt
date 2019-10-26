@@ -9,12 +9,18 @@ find_package(GTest REQUIRED)
 find_package(Threads)
 INCLUDE_DIRECTORIES(${GTEST_INCLUDE_DIRS})
 
+ADD_LIBRARY(SeqCounterLib STATIC SequenceCounter.c BinarySearchST.c FileUtils.c)
+
+ADD_LIBRARY( SeqCounterSingleLib STATIC
+        SequenceCounterSingle.c
+        )
+ADD_LIBRARY(SeqCounterMultiLib SHARED SequenceCounterMulti.c)
+
+
 #add_executable(park_sem1_c_dz2 BinarySearchST.c FileUtils.c)
 add_executable(SeqGen SeqGenFiles.c SequenceGen.c RandomUtils.c FileUtils.c)
-add_executable(SeqCounterSingle SequenceCounterMain.c  SequenceCounterSingle.c
-        SequenceCounter.c BinarySearchST.c FileUtils.c)
-add_executable(SeqCounterMulti SequenceCounterMain.c SequenceCounterMulti.c
-        SequenceCounter.c BinarySearchST.c FileUtils.c )
+add_executable(SeqCounterSingle SequenceCounterMain.c  SeqCounterSingleLib)
+add_executable(SeqCounterMulti SequenceCounterMain.c SeqCounterMultiLib )
 target_link_libraries(SeqCounterMulti pthread )
 
 
@@ -23,19 +29,9 @@ target_link_libraries(SeqCounterMulti pthread )
 #add_subdirectory(Google_tests/lib/googletest)
 #include_directories(Google_tests/lib/googletest/googletest/include Google_tests/lib/googletest/googletest/src)
 
-
-
-set(SOURCE_FILES )
-
-
 # CMake instructions to make the static lib
 
-ADD_LIBRARY(SeqCounterLib STATIC SequenceCounter.c BinarySearchST.c FileUtils.c)
 
-ADD_LIBRARY( SeqCounterSingleLib STATIC
-        SequenceCounterSingle.c
-        )
-ADD_LIBRARY(SeqCounterMultiLib SHARED SequenceCounterMulti.c)
 
 
 set(TARGET_LIBS SeqCounterLib gtest gtest_main)
