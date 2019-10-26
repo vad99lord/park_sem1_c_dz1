@@ -13,7 +13,7 @@ int compare_chars(const void *p, const void *q) {
 TEST(BinSearchTests, ValidityTest) {
 
     size_t sizeB = 0;
-    char* buffer = readFile("../tinyST.txt",&sizeB);
+    char* buffer = readFile("tinyST.txt",&sizeB);
 
     //printf("%s\n", buffer);
 
