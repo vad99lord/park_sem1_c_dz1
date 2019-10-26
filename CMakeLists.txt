@@ -1,8 +1,8 @@
-cmake_minimum_required(VERSION 3.15)
+cmake_minimum_required(VERSION 2.8.8)
 project(park_sem1_c_dz2)
 
 set(CMAKE_C_STANDARD 11)
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 11)
 
 #add_executable(park_sem1_c_dz2 BinarySearchST.c FileUtils.c)
 add_executable(SeqGen SeqGenFiles.c SequenceGen.c RandomUtils.c FileUtils.c)
