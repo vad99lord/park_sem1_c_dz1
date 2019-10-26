@@ -11,7 +11,7 @@ static const int SmallLength = 10;
 
 TEST(SeqCountRand, ValidityTest) {
 
-    std::string fileNames[] = { "../RandSmall.txt","../RandMedium.txt","../RandLarge.txt"};
+    std::string fileNames[] = { "RandSmall.txt","RandMedium.txt","RandLarge.txt"};
     int maxLength[] = {SmallLength,SmallLength*10,SmallLength*100};
 
     for (int i =0 ;i<FilesCount;i++){

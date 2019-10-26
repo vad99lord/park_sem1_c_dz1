@@ -69,6 +69,8 @@ script:
   - valgrind --leak-check=full -q ./TestSingle
   - valgrind --leak-check=full -q ./TestMultiRand
   - valgrind --leak-check=full -q ./TestSingleRand
-
+  - sudo make SeqCounterMulti
+  - sudo make SeqCounterSingle
+  - ./SeqCounterMulti ./RandMedium.txt
 notifications:
   email: false
