@@ -1,0 +1,79 @@
+language: c++
+
+os: linux
+
+env:
+  - TARGET_CPU=amd64 BUILD_CONFIGURATION=Debug
+  - TARGET_CPU=amd64 BUILD_CONFIGURATION=Release
+  - TARGET_CPU=x86 BUILD_CONFIGURATION=Debug
+  - TARGET_CPU=x86 BUILD_CONFIGURATION=Release
+dist: xenial
+sudo: true
+
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - valgrind
+      - cppcheck
+      - cmake
+      - gcc
+      - clang
+compiler:
+  - gcc
+  - clang
+before install:
+  - sudo apt update
+  - sudo -i  which clang
+  - sudo -i clang --version
+  - sudo -i which cmake
+  - sudo -i cmake --version
+install:
+  ############################################################################
+  # Install a recent CMake
+  ############################################################################
+  - cmake --version
+  - gcc --version
+  - clang --version
+  - sudo apt install cppcheck
+  - sudo apt install valgrind
+  - sudo apt install libgtest-dev
+  - cd /usr/src/gtest
+  - dir
+  - sudo cmake CMakeLists.txt
+  - sudo make
+  - sudo mv libgtest* /usr/lib/
+  - cd "${TRAVIS_BUILD_DIR}"
+script:
+  ############################################################################
+  # Build main and tests
+  ############################################################################
+  - cmake --version
+  - dir
+  - ls
+  - sudo cmake -DCMAKE_VERBOSE_MAKEFILE=ON CMakeLists.txt
+  - cppcheck --check-config --error-exitcode=1 --enable=warning,performance,information,style --suppress=missingIncludeSystem *c *.cpp *.h
+  - ls
+  - sudo make SeqGen
+  - ./SeqGen
+  - dir
+  - sudo make TestST
+  - dir
+  - sudo make TestSingle
+  - sudo make TestMulti
+  - sudo make TestSingleRand
+  - sudo make TestMultiRand
+  - valgrind --leak-check=full -q ./TestST
+  - valgrind --leak-check=full -q ./TestMulti
+  - valgrind --leak-check=full -q ./TestSingle
+  - valgrind --leak-check=full -q ./TestMultiRand
+  - valgrind --leak-check=full -q ./TestSingleRand
+  - sudo make SeqCounterMulti
+  - sudo make SeqCounterSingle
+  - ./SeqCounterMulti ./RandMedium.txt
+  - ./SeqCounterSingle ./RandLarge.txt
+  - ./SeqCounterMulti ./RandMedium.txt
+  - ./SeqCounterSingle ./RandLarge.txt
+notifications:
+  email: false
