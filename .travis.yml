@@ -63,11 +63,12 @@ script:
   - sudo make TestSingle
   - sudo make TestMulti
   - sudo make TestSingleRand
-  - sudo make TestSigleRand
+  - sudo make TestMultiRand
   - valgrind --leak-check=full -q ./TestST
   - valgrind --leak-check=full -q ./TestMulti
   - valgrind --leak-check=full -q ./TestSingle
-  -
+  - valgrind --leak-check=full -q ./TestMultiRand
+  - valgrind --leak-check=full -q ./TestSingleRand
 
 notifications:
   email: false

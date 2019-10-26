@@ -10,9 +10,9 @@
 int main() {
     srand(time(NULL));
     char** filenames = malloc(FilesCount*sizeof(char*));
-    filenames[0] = "../RandSmall.txt";
-    filenames[1] = "../RandMedium.txt";
-    filenames[2] = "../RandLarge.txt";
+    filenames[0] = "RandSmall.txt";
+    filenames[1] = "RandMedium.txt";
+    filenames[2] = "RandLarge.txt";
     size_t size[] = {SmallSize,SmallSize*100,SmallSize*10000};
     int maxLength[] = {SmallLength,SmallLength*10,SmallLength*100};
     for (int i = 0; i<FilesCount;i++) {

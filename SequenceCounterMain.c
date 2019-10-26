@@ -3,9 +3,9 @@
 #include <time.h>
 #include "FileUtils.h"
 #include "SequenceCounter.h"
-int main() {
+int main(int argc,char* argv[]) {
     size_t size = 0;
-    char *buffer = readFile("../smallDuplicate.txt", &size);
+    char *buffer = readFile(argv[1], &size);
 
     //printf("%s\n", buffer);
 
