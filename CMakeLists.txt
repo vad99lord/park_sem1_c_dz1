@@ -4,6 +4,11 @@ project(park_sem1_c_dz2)
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_CXX_STANDARD 11)
 
+# Locate GTest
+find_package(GTest REQUIRED)
+find_package(Threads)
+INCLUDE_DIRECTORIES(${GTEST_INCLUDE_DIRS})
+
 #add_executable(park_sem1_c_dz2 BinarySearchST.c FileUtils.c)
 add_executable(SeqGen SeqGenFiles.c SequenceGen.c RandomUtils.c FileUtils.c)
 add_executable(SeqCounterSingle SequenceCounterMain.c  SequenceCounterSingle.c
@@ -15,8 +20,8 @@ target_link_libraries(SeqCounterMulti pthread )
 
 
 
-add_subdirectory(Google_tests/lib/googletest)
-include_directories(Google_tests/lib/googletest/googletest/include Google_tests/lib/googletest/googletest/src)
+#add_subdirectory(Google_tests/lib/googletest)
+#include_directories(Google_tests/lib/googletest/googletest/include Google_tests/lib/googletest/googletest/src)
 
 
 
@@ -37,14 +42,14 @@ set(TARGET_LIBS SeqCounterLib gtest gtest_main)
 
 
 add_executable(TestST TestST.cpp BinarySearchST.c FileUtils.c)
-target_link_libraries(TestST gtest gtest_main)
+target_link_libraries(TestST gtest gtest_main ${GTEST_BOTH_LIBRARIES}  pthread)
 
 ADD_EXECUTABLE( TestSingleRand  TestSeqRand.cpp )
 ADD_EXECUTABLE( TestMultiRand TestSeqRand.cpp)
 ADD_EXECUTABLE( TestSingle  TestSimpleSeq.cpp )
 ADD_EXECUTABLE( TestMulti TestSimpleSeq.cpp)
 
-TARGET_LINK_LIBRARIES( TestSingle  ${TARGET_LIBS} SeqCounterSingleLib pthread)
-TARGET_LINK_LIBRARIES( TestMulti  ${TARGET_LIBS} SeqCounterMultiLib pthread)
-TARGET_LINK_LIBRARIES( TestSingleRand ${TARGET_LIBS} SeqCounterSingleLib pthread)
-TARGET_LINK_LIBRARIES( TestMultiRand ${TARGET_LIBS} SeqCounterMultiLib pthread)
+TARGET_LINK_LIBRARIES( TestSingle  ${TARGET_LIBS} SeqCounterSingleLib ${GTEST_BOTH_LIBRARIES}  pthread)
+TARGET_LINK_LIBRARIES( TestMulti  ${TARGET_LIBS} SeqCounterMultiLib ${GTEST_BOTH_LIBRARIES}  pthread)
+TARGET_LINK_LIBRARIES( TestSingleRand ${TARGET_LIBS} SeqCounterSingleLib ${GTEST_BOTH_LIBRARIES}  pthread)
+TARGET_LINK_LIBRARIES( TestMultiRand ${TARGET_LIBS} SeqCounterMultiLib ${GTEST_BOTH_LIBRARIES}  pthread)

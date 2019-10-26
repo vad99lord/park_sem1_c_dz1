@@ -55,10 +55,9 @@ script:
   - sudo cmake -DCMAKE_VERBOSE_MAKEFILE=ON CMakeLists.txt
   - cppcheck --check-config --error-exitcode=1 --enable=warning,performance,information,style --suppress=missingIncludeSystem *c *.cpp *.h
   - ls
-  - sudo make Google_tests_run
-  - sudo make park_sem1_c_dz1
+  - sudo make TestST
   - dir
-  - valgrind --leak-check=full -q ./Google_tests_run
+  - valgrind --leak-check=full -q ./TestST
 
 notifications:
   email: false
