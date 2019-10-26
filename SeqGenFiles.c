@@ -1,4 +1,5 @@
 #include <time.h>
+#include "stdio.h"
 #include "SequenceGen.h"
 #include "FileUtils.h"
 
@@ -21,6 +22,7 @@ int main() {
         //printf("%s\n", arr);
         writeToFile(filenames[i], arr, size[i]);
         free(arr);
+        printf("Generate %s with random data of size %zu\n", filenames[i],size[i]);
     }
     free(filenames);
 }
