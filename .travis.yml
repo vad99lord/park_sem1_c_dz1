@@ -55,9 +55,16 @@ script:
   - sudo cmake -DCMAKE_VERBOSE_MAKEFILE=ON CMakeLists.txt
   - cppcheck --check-config --error-exitcode=1 --enable=warning,performance,information,style --suppress=missingIncludeSystem *c *.cpp *.h
   - ls
+  - sudo make SeqGen
+  - ./SeqGen
+  - dir
   - sudo make TestST
   - dir
+  - sudo make TestSingle
+  - sudo make TestMulti
   - valgrind --leak-check=full -q ./TestST
+  - valgrind --leak-check=full -q ./TestMulti
+  - valgrind --leak-check=full -q ./TestSingle
 
 notifications:
   email: false
