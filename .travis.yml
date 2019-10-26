@@ -72,5 +72,8 @@ script:
   - sudo make SeqCounterMulti
   - sudo make SeqCounterSingle
   - ./SeqCounterMulti ./RandMedium.txt
+  - ./SeqCounterSingle ./RandLarge.txt
+  - ./SeqCounterMulti ./RandMedium.txt
+  - ./SeqCounterSingle ./RandLarge.txt
 notifications:
   email: false
